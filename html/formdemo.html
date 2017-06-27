@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>form demo</title>
+</head>
+
+<body>
+    <form action="action_page.php">
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="Internet Explorer"></option>
+            <option value="Firefox"></option>
+            <option value="Chrome"></option>
+            <option value="Opera"></option>
+            <option value="Safari"></option>
+        </datalist>
+    </form>
+    <!-- 
+    <video width="420" controls>
+        <source src="mov_bbb.mp4" type="video/mp4">
+        <source src="mov_bbb.ogg" type="video/ogg"> Your browser does not support the video tag.
+    </video>
+    -->
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <script type="text/javascript">
+    var c = document.getElementById("myCanvas");
+    var cxt = c.getContext("2d");
+    var grd = cxt.createLinearGradient(0, 0, 175, 50);
+    grd.addColorStop(0, "#FF0000");
+    grd.addColorStop(1, "#00FF00");
+    cxt.fillStyle = grd;
+    cxt.fillRect(0, 0, 175, 50);
+    </script>
+</body>
+
+</html>
