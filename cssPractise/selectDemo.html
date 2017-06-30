@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>selector demo</title>
+    <style type="text/css">
+    p.important {
+        background-color: yellow
+    }
+    
+    .important {
+        background-color: red;
+        font-weight: bold;
+    }
+    
+    .warning {
+        font-style: italic;
+    }
+    
+    .important.warning {
+        background: silver;
+    }
+
+    p[class~="important"]{font-family: Monaco }
+    </style>
+</head>
+
+<body>
+    <h1 class="important">This heading is very important.</h1>
+    <p class="important ">This paragraph is very important.</p>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p>...</p>
+    <p class="important warning">
+        This paragraph is a very important warning.
+    </p>
+</body>
+
+</html>
