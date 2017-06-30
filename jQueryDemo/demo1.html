@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jquery demo</title>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("button").click(function() {
+            if ($("p").is(":visible") == true)
+                $("p").hide();
+            else
+                $("p").show();
+        })
+    });
+    </script>
+</head>
+
+<body>
+    <h2>This is a heading</h2>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <button type="button" style="height: 30px;">Click me and all p will hide </button>
+</body>
+
+</html>
