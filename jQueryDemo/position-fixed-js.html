@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>position fixed js demo</title>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    var move_x = 10,
+        move_y = 10,
+        y_dirt = 1,
+        x_dirt = 1;
+
+    function moveOn() {
+        var currTop = $("#will").offset().top;
+        var currLeft = $("#will").offset().left;
+
+        var newTop = currTop + y_dirt * move_y;
+        if (y_dirt == 1 && (newTop + 120) > $(window).height()) {
+            y_dirt = -1;
+            newTop += 2 * y_dirt * move_y;
+        } else if (y_dirt == -1 && newTop < 0) {
+            y_dirt = 1;
+            newTop += 2 * y_dirt * move_y;
+        }
+
+        var newLeft = currLeft + x_dirt * move_x;
+        if (x_dirt == 1 && (newLeft + 200) > $(window).width()) {
+            x_dirt = -1;
+            newLeft += 2 * x_dirt * move_x;
+        } else if (x_dirt == -1 && newLeft < 0) {
+            x_dirt = 1;
+            newLeft += 2 * x_dirt * move_x;
+        }
+
+        $("#will").offset({
+            top: newTop,
+            left: newLeft
+        });
+        setTimeout("moveOn()", 50);
+    }
+
+    $(document).ready(function() {
+        moveOn();
+
+        // $("#will").css("top", "300px");
+        // $("#will").css("left", "300px");
+
+    });
+    </script>
+    <style type="text/css">
+    #will {
+        width: 200px;
+        height: 120px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /*      top: 40px;
+        left: 800px;*/
+    }
+    </style>
+</head>
+
+<body>
+    <img src="http://osltoovzr.bkt.clouddn.com/icon.jpg" id="will">
+</body>
+
+</html>
